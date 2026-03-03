@@ -27,6 +27,7 @@ const Report = () => import('./views/Report.vue');
 const TimespiralView = () => import('./views/TimespiralView.vue');
 const Dev = () => import('./views/Dev.vue');
 const Graph = () => import('./views/Graph.vue');
+const Leaderboard = () => import('./views/Leaderboard.vue');
 const NotFound = () => import('./views/NotFound.vue');
 
 Vue.use(VueRouter);
@@ -86,6 +87,7 @@ const router = new VueRouter({
     { path: '/work-report', component: WorkReport },
     { path: '/billing', component: BillingView },
     { path: '/analysis/activity', component: AISummaryView },
+    { path: '/leaderboard', component: Leaderboard },
     { path: '/search', component: Search },
     { path: '/graph', component: Graph },
     { path: '/dev', component: Dev },

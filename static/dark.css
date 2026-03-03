@@ -28,6 +28,7 @@ hr {
 .aw-navbar {
   background-color: #1a1d24 !important;
   border-color: #282c32 !important;
+  border-bottom: 3px solid #d16820 !important;
 }
 
 .nav-item a.nav-link {
@@ -35,11 +36,11 @@ hr {
 }
 
 .nav-item:hover {
-  background-color: #282c32 !important;
+  background-color: #2a2015 !important;
 }
 
 .navbar-brand span {
-  color: #e9ebf0 !important;
+  color: #e8935a !important;
 }
 
 .navbar-toggler-icon {
@@ -478,4 +479,32 @@ label.btn-outline-danger {
   background-color: #e9ebf0 !important;
   color: #0f131a !important;
   border-color: #e9ebf0 !important;
+}
+/* Malachi brand accents for dark mode */
+a {
+  color: #e8935a !important;
+}
+
+a:hover {
+  color: #d16820 !important;
+}
+
+.btn-primary {
+  background-color: #d16820 !important;
+  border-color: #d16820 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #a85019 !important;
+  border-color: #a85019 !important;
+}
+
+.nav-item.active .nav-link,
+.nav-item.router-link-active .nav-link {
+  color: #d16820 !important;
+}
+
+.nav-item a.nav-link:hover {
+  color: #e8935a !important;
 }
