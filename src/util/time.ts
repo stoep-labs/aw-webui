@@ -174,7 +174,7 @@ export function format_time_of_day(date: Date | string, locale?: string | string
  * Count the number of working days (Mon-Fri) between two dates (inclusive).
  * Handles partial weeks correctly (e.g. if start is Wednesday, counts Wed-Fri = 3 days).
  */
-export function getWorkingDaysInRange(start: Date | string, end: Date | string): number {
+export function getWorkingDaysInRange(start: Date | string | Moment, end: Date | string | Moment): number {
   const s = moment(start).startOf('day');
   const e = moment(end).startOf('day');
   let count = 0;
