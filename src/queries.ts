@@ -725,20 +725,6 @@ export function browserOnlyQuery(browserbuckets: string[]): string[] {
   return querystr_to_array(code);
 }
 
-// Like categoryQuery but also returns daily totals (per-day productive time).
-// This is used by the leaderboard to exclude days where employee was on leave.
-export function categoryQueryWithDaily(
-  params: MultiQueryParams | DesktopQueryParams | AndroidQueryParams
-): string[] {
-  const q = `
-  ${isMultiParams(params) ? canonicalMultideviceEvents(params) : canonicalEvents(params)}
-  cat_events   = sort_by_duration(merge_events_by_keys(events, ["$category"]));
-  daily_events = sort_by_duration(merge_events_by_keys(events, ["$date"]));
-  RETURN = { "cat_events": cat_events, "daily_events": daily_events };
-`;
-  return querystr_to_array(q);
-}
-
 export default {
   fullDesktopQuery,
   analysisContextQuery,
