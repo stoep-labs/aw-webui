@@ -75,6 +75,8 @@ interface State {
 
   // Whether to hide visualizations that lack required data (default: off)
   hideUnsupportedVisualizations: boolean;
+  // Leaderboard settings
+  leaderboard_min_daily_hours: number;
 
   // Set to true if settings loaded
   _loaded: boolean;
@@ -134,6 +136,9 @@ export const useSettingsStore = defineStore('settings', {
     devmode: typeof PRODUCTION === 'undefined' ? true : !PRODUCTION,
     requestTimeout: 30,
     hideUnsupportedVisualizations: false,
+
+    // Leaderboard settings (default: 3 hours minimum per day to count as working)
+    leaderboard_min_daily_hours: 3,
 
     _loaded: false,
     _storedKeys: [],
