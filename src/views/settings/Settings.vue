@@ -28,6 +28,7 @@ import { useCategoryStore } from '~/stores/categories';
 
 import LanguageSettings from '~/views/settings/LanguageSettings.vue';
 import DaystartSettings from '~/views/settings/DaystartSettings.vue';
+import LeaderboardSettings from '~/views/settings/LeaderboardSettings.vue';
 import TimelineDurationSettings from '~/views/settings/TimelineDurationSettings.vue';
 import ReleaseNotificationSettings from '~/views/settings/ReleaseNotificationSettings.vue';
 import UncategorizedHintSettings from '~/views/settings/UncategorizedHintSettings.vue';
@@ -52,6 +53,7 @@ export default {
   components: {
     LanguageSettings,
     DaystartSettings,
+    LeaderboardSettings,
     TimelineDurationSettings,
     ReleaseNotificationSettings,
     UncategorizedHintSettings,
@@ -90,6 +92,7 @@ export default {
         label: this.$t('settings.groups.general'),
         help: this.$t('settings.groups.generalHelp'),
         components: [
+          { name: 'LeaderboardSettings' },
           { name: 'LanguageSettings' },
           { name: 'DaystartSettings' },
           { name: 'TimelineDurationSettings' },

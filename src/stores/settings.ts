@@ -77,6 +77,7 @@ interface State {
   hideUnsupportedVisualizations: boolean;
   // Leaderboard settings
   leaderboard_min_daily_hours: number;
+  leaderboard_excluded_hosts: string[];
 
   // Set to true if settings loaded
   _loaded: boolean;
@@ -139,6 +140,7 @@ export const useSettingsStore = defineStore('settings', {
 
     // Leaderboard settings (default: 3 hours minimum per day to count as working)
     leaderboard_min_daily_hours: 3,
+    leaderboard_excluded_hosts: [],
 
     _loaded: false,
     _storedKeys: [],
