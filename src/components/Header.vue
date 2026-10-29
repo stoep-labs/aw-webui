@@ -173,6 +173,15 @@ export default {
     });
 
     _.each(types_by_host, (types, hostname) => {
+      if (hostname != 'unknown') {
+        activityViews.push({
+          name: hostname,
+          hostname: hostname,
+          type: 'default',
+          pathUrl: `/activity/${formatHostParam([hostname])}`,
+          icon: 'desktop',
+        });
+      }
       if (types['android']) {
         activityViews.push({
           name: `${hostname} (Android)`,
@@ -180,14 +189,6 @@ export default {
           type: 'android',
           pathUrl: `/activity/${formatHostParam([hostname])}`,
           icon: 'mobile',
-        });
-      } else if (hostname != 'unknown') {
-        activityViews.push({
-          name: hostname,
-          hostname: hostname,
-          type: 'default',
-          pathUrl: `/activity/${formatHostParam([hostname])}`,
-          icon: 'desktop',
         });
       }
     });
